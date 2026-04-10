@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Stead Fast</title>
+  <style>
+    :root {
+      --bg: #05040E;
+      --bg-card: #0D0D24;
+      --violet: #6D5DFC;
+      --gold: #FFD86B;
+      --cyan: #4DD4FF;
+      --pink: #E94B9C;
+      --text: #E8E6F0;
+      --text-dim: #9995B5;
+      --border: rgba(109, 93, 252, 0.2);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    .stars {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 60% 20%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 80% 50%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1.5px 1.5px at 10% 80%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1px 1px at 70% 90%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1.5px 1.5px at 50% 10%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1.5px 1.5px at 85% 15%, rgba(255,255,255,0.7), transparent);
+      background-size: 250px 250px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .nebula {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .nebula-1 { width: 500px; height: 500px; background: var(--violet); opacity: 0.08; top: -100px; left: -100px; }
+    .nebula-2 { width: 400px; height: 400px; background: var(--pink); opacity: 0.06; top: 40%; right: -80px; }
+    .nebula-3 { width: 350px; height: 350px; background: var(--cyan); opacity: 0.05; bottom: -50px; left: 20%; }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .header .icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--violet), var(--pink));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 32px rgba(109, 93, 252, 0.3);
+    }
+
+    .header h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .header h1 span { color: var(--gold); }
+
+    .header .subtitle {
+      color: var(--text-dim);
+      font-size: 14px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--violet);
+      margin: 40px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 .num {
+      display: inline-block;
+      background: var(--violet);
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      text-align: center;
+      line-height: 28px;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    p { margin-bottom: 14px; color: var(--text); }
+
+    .highlight {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 16px 0;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card ul li {
+      padding: 6px 0;
+      color: var(--text-dim);
+      font-size: 14px;
+    }
+
+    .card ul li::before {
+      content: "✕ ";
+      color: var(--pink);
+      font-weight: 700;
+      margin-right: 4px;
+    }
+
+    .card.positive ul li::before {
+      content: "✓ ";
+      color: var(--cyan);
+    }
+
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+
+    .summary-table th,
+    .summary-table td {
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .summary-table th {
+      color: var(--text-dim);
+      font-weight: 500;
+      width: 50%;
+    }
+
+    .summary-table td {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    .steps {
+      list-style: none;
+      padding: 0;
+    }
+
+    .steps li {
+      padding: 8px 0 8px 28px;
+      position: relative;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .steps li::before {
+      content: attr(data-step);
+      position: absolute;
+      left: 0;
+      color: var(--violet);
+      font-weight: 700;
+    }
+
+    .contact-email {
+      display: inline-block;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--gold);
+    }
+
+    .contact-email:hover { opacity: 0.8; }
+
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+
+    .footer .brand { color: var(--gold); font-weight: 700; }
+
+    @media (max-width: 600px) {
+      .container { padding: 32px 16px 60px; }
+      .header h1 { font-size: 26px; }
+      h2 { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="nebula nebula-1"></div>
+  <div class="nebula nebula-2"></div>
+  <div class="nebula nebula-3"></div>
+
+  <div class="container">
+    <div class="header">
+      <div class="icon">🎯</div>
+      <h1>Privacy Policy — <span>Stead Fast</span></h1>
+      <p class="subtitle">Last updated: April 10, 2026</p>
+    </div>
+
+    <p>
+      Stead Fast ("the App") is developed and maintained by Harp ("we", "us", or "our").
+      This Privacy Policy explains how we handle information when you use the App.
+    </p>
+
+    <!-- 1 -->
+    <h2><span class="num">1</span> Information We Collect</h2>
+    <p><span class="highlight">We do not collect any personal information.</span></p>
+    <p>
+      Stead Fast is designed to work entirely on your device. We do not require account creation,
+      login, or registration of any kind.
+    </p>
+
+    <div class="card positive">
+      <p style="color:var(--text); margin-bottom:12px; font-weight:600;">Data stored locally on your device:</p>
+      <ul>
+        <li>Schedule blocks — name, category, emoji, times, active days, reminder settings</li>
+        <li>Completion records — started, completed, or skipped status per block per day</li>
+        <li>Streak data — current and best streak counts</li>
+        <li>App settings — notification preferences, consistency goal, haptic feedback</li>
+      </ul>
+    </div>
+
+    <p>
+      All data is stored <span class="highlight">exclusively on your device</span> using local storage.
+      We never transmit, upload, or sync this data to any server, cloud service, or third party.
+    </p>
+
+    <!-- 2 -->
+    <h2><span class="num">2</span> Information We Do NOT Collect</h2>
+    <div class="card">
+      <ul>
+        <li>Personal identifiers (name, email, phone number, address)</li>
+        <li>Location data</li>
+        <li>Contacts or calendar data</li>
+        <li>Photos, camera, or microphone data</li>
+        <li>Device identifiers or advertising IDs</li>
+        <li>Analytics, crash reports, or usage telemetry</li>
+        <li>Financial or payment information</li>
+        <li>Health data</li>
+        <li>Browsing history</li>
+      </ul>
+    </div>
+
+    <!-- 3 -->
+    <h2><span class="num">3</span> Notifications</h2>
+    <p>
+      The App uses local push notifications to remind you when a scheduled block starts.
+      These notifications are:
+    </p>
+    <div class="card positive">
+      <ul>
+        <li>Generated and triggered entirely on your device</li>
+        <li>Never sent through any external push notification service</li>
+        <li>Controlled by your device's notification settings</li>
+        <li>Able to be fully disabled within the App's Settings screen</li>
+      </ul>
+    </div>
+    <p>Notification content (block name, motivational messages) is generated locally and never transmitted externally.</p>
+
+    <!-- 4 -->
+    <h2><span class="num">4</span> Third-Party Services</h2>
+    <p>Stead Fast does <span class="highlight">not</span> integrate with any third-party services, including:</p>
+    <div class="card">
+      <ul>
+        <li>Analytics platforms (Google Analytics, Firebase, Mixpanel)</li>
+        <li>Advertising networks</li>
+        <li>Crash reporting services (Crashlytics, Sentry)</li>
+        <li>Social media SDKs</li>
+        <li>Cloud storage or sync services</li>
+      </ul>
+    </div>
+    <p>The App does not contain any advertisements.</p>
+
+    <!-- 5 -->
+    <h2><span class="num">5</span> Children's Privacy</h2>
+    <p>
+      Stead Fast does not target children under the age of 13. However, since the App
+      <span class="highlight">collects no personal information whatsoever</span>, it is safe for users of all ages.
+      We comply with the Children's Online Privacy Protection Act (COPPA) and similar regulations
+      by not collecting any data from any user, regardless of age.
+    </p>
+
+    <!-- 6 -->
+    <h2><span class="num">6</span> Data Security</h2>
+    <p>
+      Since all data is stored locally on your device, the security of your data is managed by your
+      device's built-in security features (device lock, encryption, etc.). We recommend keeping your
+      device software up to date and using a secure lock screen.
+    </p>
+
+    <!-- 7 -->
+    <h2><span class="num">7</span> Data Deletion</h2>
+    <p>You can delete all App data at any time:</p>
+    <ol class="steps">
+      <li data-step="1.">Open the App → Settings → <strong>Reset All Data</strong> — erases all completions, streaks, and custom blocks</li>
+      <li data-step="2.">Uninstall the App from your device — removes all locally stored data permanently</li>
+    </ol>
+    <p>Since we do not store any data on external servers, uninstalling the App completely removes all associated data.</p>
+
+    <!-- 8 -->
+    <h2><span class="num">8</span> Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. Any changes will be reflected in the
+      "Last updated" date at the top of this page. Continued use of the App after changes
+      constitutes acceptance of the updated policy.
+    </p>
+
+    <!-- 9 -->
+    <h2><span class="num">9</span> Contact Us</h2>
+    <p>
+      If you have any questions or concerns about this Privacy Policy, please contact us at:<br>
+      <a class="contact-email" href="mailto:privacy@harp.dev">privacy@harp.dev</a>
+    </p>
+
+    <!-- 10 -->
+    <h2><span class="num">10</span> Summary</h2>
+    <table class="summary-table">
+      <tr><th>Do you collect personal data?</th><td>No</td></tr>
+      <tr><th>Do you share data with third parties?</th><td>No</td></tr>
+      <tr><th>Do you use analytics or tracking?</th><td>No</td></tr>
+      <tr><th>Do you show advertisements?</th><td>No</td></tr>
+      <tr><th>Where is my data stored?</th><td>Only on your device</td></tr>
+      <tr><th>Can I delete my data?</th><td>Settings → Reset All Data, or uninstall</td></tr>
+      <tr><th>Is the App safe for children?</th><td>Yes — no data is collected</td></tr>
+    </table>
+
+    <div class="footer">
+      <p><span class="brand">Stead Fast</span> · Built by Harp</p>
+      <p>© 2026 Harp. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
